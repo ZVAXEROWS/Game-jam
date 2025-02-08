@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10h47i1amf8u"]
+
+[ext_resource type="Script" path="res://Game-jam/scripts/character_body_2d.gd" id="1_7fwar"]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_7fwar")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
