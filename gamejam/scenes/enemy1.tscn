@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqq44umi4jty6"]
+
+[ext_resource type="Texture2D" uid="uid://dj22pccrwly2s" path="res://assets/enemies/pixilart-sprite(1).png" id="1_sp0uf"]
+[ext_resource type="PackedScene" uid="uid://dnj086ipumwh8" path="res://scenes/killzone.tscn" id="2_bwy52"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvsej"]
+atlas = ExtResource("1_sp0uf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkdpc"]
+atlas = ExtResource("1_sp0uf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nvky"]
+atlas = ExtResource("1_sp0uf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioygn"]
+atlas = ExtResource("1_sp0uf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r428"]
+atlas = ExtResource("1_sp0uf")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64lp4"]
+atlas = ExtResource("1_sp0uf")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wip1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvsej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkdpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nvky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioygn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r428")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64lp4")
+}],
+"loop": true,
+"name": &"e1",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raads"]
+size = Vector2(24, 31)
+
+[node name="Enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_wip1u")
+animation = &"e1"
+autoplay = "e1"
+frame_progress = 0.923298
+
+[node name="Killzone" parent="." instance=ExtResource("2_bwy52")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_raads")
